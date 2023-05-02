@@ -36,8 +36,6 @@
     </div>
     <div class="card-body bg-primary">
       <center><p><h2><b>PROYEK 1</b></h2></p></center>
-      <p><h4><b>Ahmad Tito (02)</b></h4></p>
-      <p><h4><b>Rizky Angkata (21)</b></h4></p>
     </div>
   </div>
 @endsection

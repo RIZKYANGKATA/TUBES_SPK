@@ -2,7 +2,7 @@
     <!-- Brand Logo -->
     <a href="../../index3.html" class="brand-link">
       <img src="{{ asset('assets/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8') }}">
-      <span class="brand-text font-weight-light">PWL</span>
+      <span class="brand-text font-weight-light">Proyek 1</span>
     </a>
 
     <!-- Sidebar -->
@@ -13,7 +13,7 @@
             <img src="{{ asset('assets/dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image') }}">
           </div>
           <div class="info">
-            <a href="#" class="d-block">UTS</a>
+            <a href="#" class="d-block">TUBES</a>
           </div>
         </div>
     
@@ -43,19 +43,25 @@
             <li class="nav-item">
               <a href="{{ url('/lagu') }}" class="nav-link">
                 <i class="nav-icon fas fa-headphones"></i>
-                <p>Lagu</p>
+                <p>Transaksi</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="{{ url('/game') }}" class="nav-link">
                 <i class="nav-icon fas fa-gamepad"></i>
-                <p>Game</p>
+                <p>Stok</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="{{ url('/logout') }}" class="nav-link">
                 <i class="nav-icon fas fa-sign-out-alt"></i>
-                <p>Logout</p>
+                <p>Laporan</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ url('/logout') }}" class="nav-link">
+                <i class="nav-icon fas fa-sign-out-alt"></i>
+                <p>Master Data</p>
               </a>
             </li>
           </ul>
