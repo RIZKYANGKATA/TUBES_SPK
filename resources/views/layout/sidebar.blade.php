@@ -13,7 +13,7 @@
             <img src="{{ asset('assets/dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image') }}">
           </div>
           <div class="info">
-            <a href="#" class="d-block">TUBES</a>
+            <a href="#" class="d-block">ADMIN</a>
           </div>
         </div>
     
@@ -40,11 +40,40 @@
                 <p>Dashboard</p>
               </a>
             </li>
-            <li class="nav-item">
-              <a href="{{ url('/lagu') }}" class="nav-link">
-                <i class="nav-icon fas fa-headphones"></i>
-                <p>Transaksi</p>
+            <li class="nav-item menu-close">
+              <a href="#" class="nav-link active">
+                <i class="nav-icon far fa-envelope"></i>
+                <p>
+                  Transaksi
+                  <i class="fas fa-angle-left right"></i>
+                </p>
               </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="../mailbox/mailbox.html" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Barang Masuk</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="../mailbox/compose.html" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Barang Keluar</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="../mailbox/read-mail.html" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Transaksi Barang Masuk</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="../mailbox/read-mail.html" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Transaksi Barang Keluar</p>
+                  </a>
+                </li>
+              </ul>
             </li>
             <li class="nav-item">
               <a href="{{ url('/game') }}" class="nav-link">
