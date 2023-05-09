@@ -1,4 +1,4 @@
-<aside class="main-sidebar sidebar-dark-primary bg-pink elevation-4">
+<aside class="main-sidebar sidebar-dark-primary bg-primary elevation-4">
     <!-- Brand Logo -->
     <a href="../../index3.html" class="brand-link">
       <img src="{{ asset('assets/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8') }}">
@@ -6,14 +6,14 @@
     </a>
 
     <!-- Sidebar -->
-    <div class="sidebar bg-pink">
+    <div class="sidebar bg-primary">
         <!-- Sidebar user (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="image">
             <img src="{{ asset('assets/dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image') }}">
           </div>
           <div class="info">
-            <a href="#" class="d-block">TUBES</a>
+            <a href="#" class="d-block">ADMIN</a>
           </div>
         </div>
     
@@ -40,11 +40,36 @@
                 <p>Dashboard</p>
               </a>
             </li>
-            <li class="nav-item">
-              <a href="{{ url('/lagu') }}" class="nav-link">
-                <i class="nav-icon fas fa-headphones"></i>
-                <p>Transaksi</p>
+            <li class="nav-item menu-close">
+              <a href="#" class="nav-link">
+                <i class="nav-icon far fa-envelope"></i>
+                <p>
+                  Transaksi
+                  <i class="fas fa-angle-left right"></i>
+                </p>
               </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="../mailbox/mailbox.html" class="nav-link">
+                    <p>Barang Masuk</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="../mailbox/compose.html" class="nav-link">
+                    <p>Barang Keluar</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="../mailbox/read-mail.html" class="nav-link">
+                    <p>Transaksi Barang Masuk</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="../mailbox/read-mail.html" class="nav-link">
+                    <p>Transaksi Barang Keluar</p>
+                  </a>
+                </li>
+              </ul>
             </li>
             <li class="nav-item">
               <a href="{{ url('/game') }}" class="nav-link">
