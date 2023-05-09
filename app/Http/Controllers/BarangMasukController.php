@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\barang_masuk;
-use App\Models\retur;
 use Illuminate\Http\Request;
 
 class BarangMasukController extends Controller
@@ -39,11 +38,7 @@ class BarangMasukController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'kode_transaksi' => 'required|varchar|max:20',
-            'tanggal' => 'required|date',
-            'kode_pengguna' => 'required|varchar|max:100'
-        ]);
+        
         $data = barang_masuk::create($request->except(['_token']));
 
         return redirect('barang_masuk')
@@ -85,9 +80,9 @@ class BarangMasukController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'kode_transaksi' => 'required|varchar|max:20',
+            'kode_transaksi' => 'required|string|max:20',
             'tanggal' => 'required|date',
-            'kode_pengguna' => 'required|varchar|max:100'
+            'kode_pengguna' => 'required|string|max:100'
         ]);
         $data = barang_masuk::where('id', '=', $id)->update($request->except(['_token', '_method']));
         return redirect('barang_masuk')

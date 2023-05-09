@@ -21,7 +21,7 @@ Route::get('/', function () {
 
 Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::get('/', [DashboardController::class, 'index']);
-Route::get('/barang_masuk', [BarangMasukController::class, 'index']);
+Route::resource('/barang_masuk', BarangMasukController::class);
 Route::post('/barang_masuk', [BarangMasukController::class, 'store']);
 Route::get('/barang_masuk/create', [BarangMasukController::class, 'create']);
 
