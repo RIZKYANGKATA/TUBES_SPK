@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\barang_masuk;
+use App\Models\retur;
 use Illuminate\Http\Request;
 
 class BarangMasukController extends Controller
@@ -14,7 +15,9 @@ class BarangMasukController extends Controller
      */
     public function index()
     {
-        //
+        $bm = barang_masuk::paginate(5);
+        return view('barang_masuk.barang_masuk')
+            ->with('bm', $bm);
     }
 
     /**
@@ -24,7 +27,8 @@ class BarangMasukController extends Controller
      */
     public function create()
     {
-        //
+        return view('barang_masuk.create_barang_masuk')
+            ->with('url_form', url('/barang_masuk'));
     }
 
     /**
@@ -35,7 +39,15 @@ class BarangMasukController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'kode_transaksi' => 'required|varchar|max:20',
+            'tanggal' => 'required|date',
+            'kode_pengguna' => 'required|varchar|max:100'
+        ]);
+        $data = barang_masuk::create($request->except(['_token']));
+
+        return redirect('barang_masuk')
+            ->with('success', 'Barang Berhasil Ditambah');
     }
 
     /**
@@ -55,9 +67,12 @@ class BarangMasukController extends Controller
      * @param  \App\Models\barang_masuk  $barang_masuk
      * @return \Illuminate\Http\Response
      */
-    public function edit(barang_masuk $barang_masuk)
+    public function edit($id)
     {
-        //
+        $bm = barang_masuk::find($id);
+        return view('barang_masuk.create_barang_masuk')
+            ->with('bm', $bm)
+            ->with('url_form', url('/barang_masuk/'. $id));
     }
 
     /**
@@ -67,9 +82,16 @@ class BarangMasukController extends Controller
      * @param  \App\Models\barang_masuk  $barang_masuk
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, barang_masuk $barang_masuk)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'kode_transaksi' => 'required|varchar|max:20',
+            'tanggal' => 'required|date',
+            'kode_pengguna' => 'required|varchar|max:100'
+        ]);
+        $data = barang_masuk::where('id', '=', $id)->update($request->except(['_token', '_method']));
+        return redirect('barang_masuk')
+            ->with('success', 'Barang Berhasil Ditambahkan');
     }
 
     /**
@@ -78,8 +100,10 @@ class BarangMasukController extends Controller
      * @param  \App\Models\barang_masuk  $barang_masuk
      * @return \Illuminate\Http\Response
      */
-    public function destroy(barang_masuk $barang_masuk)
+    public function destroy($id)
     {
-        //
+        barang_masuk::where('id', '=', $id)->delete();
+        return redirect('barang_masuk')
+            ->with('success', 'Barang Berhasil Dihapus');
     }
 }
