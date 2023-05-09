@@ -50,7 +50,7 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="../mailbox/mailbox.html" class="nav-link">
+                  <a href="{{ url('/barang_masuk')}}" class="nav-link">
                     <p>Barang Masuk</p>
                   </a>
                 </li>
