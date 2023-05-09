@@ -61,6 +61,7 @@
             <li class="nav-item">
               <a href="{{ url('/logout') }}" class="nav-link">
                 <i class="nav-icon fas fa-sign-out-alt"></i>
+                <i class="nav-item menu-open"></i>
                 <p>Master Data</p>
               </a>
             </li>
