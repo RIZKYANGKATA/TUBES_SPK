@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\barang_keluar;
 use App\Models\barang_masuk;
 use Illuminate\Http\Request;
 
@@ -95,9 +96,10 @@ class BarangMasukController extends Controller
      * @param  \App\Models\barang_masuk  $barang_masuk
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
         barang_masuk::where('id', '=', $id)->delete();
+        barang_keluar::create($request->except(['_token']));
         return redirect('barang_masuk')
             ->with('success', 'Barang Berhasil Dihapus');
     }

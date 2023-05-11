@@ -1,4 +1,4 @@
-@extends('layout.template')
+{{-- @extends('layout.template')
 
 @section('title')
     Barang Keluar
@@ -74,4 +74,4 @@
         </div><!-- /.container-fluid -->
       </section>
       <!-- /.content -->
-@endsection
+@endsection --}}
