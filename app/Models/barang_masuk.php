@@ -13,6 +13,13 @@ class barang_masuk extends Model
         'kode_transaksi',
         'nama_barang',
         'tanggal',
-        'kode_pengguna'
+        'kode_pengguna',
+        'kode_barang',
+        'satuan',
+        'kategori_barang',
+        'harga_beli',
+        'merk',
+        'warna',
+        'ket_barang',
     ];
 }

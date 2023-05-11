@@ -10,7 +10,7 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1>Daftar Barang Masuk</h1>
+              <h1>Detail Barang</h1>
             </div>
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
@@ -30,20 +30,9 @@
   
               <!-- Profile Image -->
               <div class="card card-pink card-outline">
-                <div class="card-body">
-
-                  <a href="{{url('barang_masuk/create')}}" class="btn btn-sm btn-success my-2">Tambah Data</a>
-
-                  <form action="{{ url('barang_masuk') }}" method="GET" class="form-inline my-2 my-lg-0">
-                    
-                    <input class="form-control mr-sm-2 my-2" type="search" name="query" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-                  </form>
-
-                  <table class="table table-bordered table-striped">
+                <div class="card-body"><table class="table table-bordered table-striped">
                     <thead>
                       <tr>
-                        <th>No</th>
                         <th>Kode Transaksi</th>
                         <th>Nama Barang</th>
                         <th>Tanggal</th>
@@ -59,35 +48,31 @@
                     </thead>
                     <tbody>
                       @if($bm->count() > 0)
-                        @foreach($bm as $b => $m)
                           <tr>
-                            <td>{{++$b}}</td>
-                            <td>{{$m->kode_transaksi}}</td>
-                            <td>{{$m->nama_barang}}</td>
-                            <td>{{$m->tanggal}}</td>
-                            <td>{{$m->kode_pengguna}}</td>
-                            <td>{{$m->kode_barang}}</td>
-                            <td>{{$m->satuan}}</td>
-                            <td>{{$m->kategori_barang}}</td>
-                            <td>{{$m->harga_beli}}</td>
-                            <td>{{$m->merk}}</td>
-                            <td>{{$m->warna}}</td>
-                            <td>{{$m->ket_barang}}</td>
+                            <td>{{$bm->kode_transaksi}}</td>
+                            <td>{{$bm->nama_barang}}</td>
+                            <td>{{$bm->tanggal}}</td>
+                            <td>{{$bm->kode_pengguna}}</td>
+                            <td>{{$bm->kode_barang}}</td>
+                            <td>{{$bm->satuan}}</td>
+                            <td>{{$bm->kategori_barang}}</td>
+                            <td>{{$bm->harga_beli}}</td>
+                            <td>{{$bm->merk}}</td>
+                            <td>{{$bm->warna}}</td>
+                            <td>{{$bm->ket_barang}}</td>
                             <td style="display: flex">
-
-                              
                               </div>
                           </form>
                           </td>
                         </tr>
-                      @endforeach
                     @else
-                        <tr><td colspan="12" class="text-center">Data Tidak Ada</td></tr>
+                        <tr><td colspan="11" class="text-center">Data Tidak Ada</td></tr>
                     @endif
                   </tbody>
                 </table>
+                <a href="{{url('barang_masuk')}}" class="btn btn-sm btn-primary my-2">Kembali</a>
                 <div class="d-flex justify-content-center mt-2">
-                  {{ $bm->links() }}
+                  {{-- {{ $bm->links() }} --}}
               </div>
                 <!-- /.card-body -->
               </div>
