@@ -63,6 +63,7 @@
                             <td style="display: flex">
 
                               <form method="POST" action="{{ url('/barang_masuk/'.$m->id) }}">
+                                <a href="{{ url('/barang_masuk/'. $m->id.)}}" class="btn btn-sm btn-warning mr-2">Detail</a>
                                 <a href="{{ url('/barang_masuk/'. $m->id.'/edit')}}" class="btn btn-sm btn-warning mr-2">Edit</a>
                                 @csrf
                                 @method('DELETE')

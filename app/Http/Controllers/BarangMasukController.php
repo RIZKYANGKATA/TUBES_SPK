@@ -52,9 +52,12 @@ class BarangMasukController extends Controller
      * @param  \App\Models\barang_masuk  $barang_masuk
      * @return \Illuminate\Http\Response
      */
-    public function show(barang_masuk $barang_masuk)
+    public function show($id)
     {
-        //
+        $bm = barang_masuk::find($id);
+        return view('barang_masuk.detail_barang')
+            ->with('bm', $bm)
+            ->with('url_form', url('/barang_masuk/'. $id));
     }
 
     /**
