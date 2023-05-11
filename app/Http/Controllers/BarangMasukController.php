@@ -98,8 +98,15 @@ class BarangMasukController extends Controller
      */
     public function destroy(Request $request, $id)
     {
+        $barang = barang_masuk::find($id);
+        // dd($barang['kode_transaksi']);
+        barang_keluar::create([
+            'kode_transaksi' => $barang['kode_transaksi'],
+            'tanggal' => $barang['tanggal'],
+            'kode_pengguna' => $barang['kode_pengguna'],
+            'nama_barang' => $barang['nama_barang']
+        ]);
         barang_masuk::where('id', '=', $id)->delete();
-        barang_keluar::create($request->except(['_token']));
         return redirect('barang_masuk')
             ->with('success', 'Barang Berhasil Dihapus');
     }
