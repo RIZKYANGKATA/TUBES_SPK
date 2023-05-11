@@ -13,11 +13,17 @@ class BarangMasukController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $bm = barang_masuk::paginate(5);
-        return view('barang_masuk.barang_masuk')
-            ->with('bm', $bm);
+        if($request->get('query') !== null){
+            $query = $request->get('query');
+            $bm = barang_masuk::where('kode_transaksi', 'LIKE', '%'.$query.'%')
+                ->orWhere('nama_barang', 'LIKE', '%'.$query.'%')
+                ->paginate(5);
+        } else {
+            $bm = barang_masuk::paginate(3);
+        }
+        return view('barang_masuk.barang_masuk', ['bm' => $bm]);
     }
 
     /**
