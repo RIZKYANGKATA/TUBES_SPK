@@ -64,6 +64,49 @@
                         <span class="error invalid-feedback">{{ $message }} </span>
                       @enderror
                     </div>
+                    <div class="form-group">
+                      <label>Kode Barang</label>
+                      <input class="form-control @error('kode_barang') is-invalid @enderror" value="{{ isset($bm)? $bm->kode_barang : old('kode_barang') }}" name="kode_barang" type="text"/>
+                      @error('kode_barang')
+                        <span class="error invalid-feedback">{{ $message }} </span>
+                      @enderror
+                    </div><div class="form-group">
+                      <label>Satuan</label>
+                      <input class="form-control @error('satuan') is-invalid @enderror" value="{{ isset($bm)? $bm->satuan : old('satuan') }}" name="satuan" type="text"/>
+                      @error('satuan')
+                        <span class="error invalid-feedback">{{ $message }} </span>
+                      @enderror
+                    </div><div class="form-group">
+                      <label>Kategori</label>
+                      <input class="form-control @error('kategori_barang') is-invalid @enderror" value="{{ isset($bm)? $bm->kategori_barang : old('kategori_barang') }}" name="kategori_barang" type="text"/>
+                      @error('kategori_barang')
+                        <span class="error invalid-feedback">{{ $message }} </span>
+                      @enderror
+                    </div><div class="form-group">
+                      <label>Harga Beli</label>
+                      <input class="form-control @error('harga_beli') is-invalid @enderror" value="{{ isset($bm)? $bm->harga_beli : old('harga_beli') }}" name="harga_beli" type="text"/>
+                      @error('harga_beli')
+                        <span class="error invalid-feedback">{{ $message }} </span>
+                      @enderror
+                    </div><div class="form-group">
+                      <label>Merk</label>
+                      <input class="form-control @error('merk') is-invalid @enderror" value="{{ isset($bm)? $bm->merk : old('merk') }}" name="merk" type="text"/>
+                      @error('merk')
+                        <span class="error invalid-feedback">{{ $message }} </span>
+                      @enderror
+                    </div><div class="form-group">
+                      <label>Warna</label>
+                      <input class="form-control @error('warna') is-invalid @enderror" value="{{ isset($bm)? $bm->warna : old('warna') }}" name="warna" type="text"/>
+                      @error('warna')
+                        <span class="error invalid-feedback">{{ $message }} </span>
+                      @enderror
+                    </div><div class="form-group">
+                      <label>Keterangan Barang</label>
+                      <input class="form-control @error('ket_barang') is-invalid @enderror" value="{{ isset($bm)? $bm->ket_barang : old('ket_barang') }}" name="ket_barang" type="text"/>
+                      @error('ket_barang')
+                        <span class="error invalid-feedback">{{ $message }} </span>
+                      @enderror
+                    </div>
         
         
         
