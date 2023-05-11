@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BarangKeluarController;
 use App\Http\Controllers\BarangMasukController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
@@ -24,4 +25,9 @@ Route::get('/', [DashboardController::class, 'index']);
 Route::resource('/barang_masuk', BarangMasukController::class);
 Route::post('/barang_masuk', [BarangMasukController::class, 'store']);
 Route::get('/barang_masuk/create', [BarangMasukController::class, 'create']);
+
+Route::resource('/barang_keluar', BarangKeluarController::class, 'index');
+Route::post('/barang_keluar', [BarangKeluarController::class, 'store']);
+Route::get('/barang_keluar/create', [BarangKeluarController::class, 'create']);
+
 
