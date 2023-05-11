@@ -26,7 +26,7 @@ Route::resource('/barang_masuk', BarangMasukController::class);
 Route::post('/barang_masuk', [BarangMasukController::class, 'store']);
 Route::get('/barang_masuk/create', [BarangMasukController::class, 'create']);
 
-Route::resource('/barang_keluar', BarangKeluarController::class, 'index');
+Route::resource('/barang_keluar', BarangKeluarController::class);
 Route::post('/barang_keluar', [BarangKeluarController::class, 'store']);
 Route::get('/barang_keluar/create', [BarangKeluarController::class, 'create']);
 

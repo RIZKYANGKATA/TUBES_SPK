@@ -27,7 +27,7 @@ class BarangKeluarController extends Controller
     public function create()
     {
         return view('barang_keluar.create_barang_keluar')
-            ->with('url_form', url('/barang_masuk'));
+            ->with('url_form', url('/barang_keluar'));
     }
 
     /**
@@ -74,7 +74,7 @@ class BarangKeluarController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\barang_masuk  $barang_masuk
+     * @param  \App\Models\barang_keluar  $barang_keluar
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -92,7 +92,7 @@ class BarangKeluarController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\barang_masuk  $barang_masuk
+     * @param  \App\Models\barang_keluar  $barang_keluar
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
