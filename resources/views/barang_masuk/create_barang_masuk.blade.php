@@ -44,6 +44,13 @@
                       @enderror
                     </div>
                     <div class="form-group">
+                      <label>Nama Barang</label>
+                      <input class="form-control @error('nama_barang') is-invalid @enderror" value="{{ isset($bm)? $bm->nama_barang : old('nama_barang') }}" name="nama_barang" type="text" />
+                      @error('nama_barang')
+                        <span class="error invalid-feedback">{{ $message }} </span>
+                      @enderror
+                    </div>
+                    <div class="form-group">
                       <label>Tanggal</label>
                       <input class="form-control @error('tanggal') is-invalid @enderror" value="{{ isset($bm)? $bm->tanggal : old('tanggal') }}" name="tanggal" type="text" />
                       @error('tanggal')

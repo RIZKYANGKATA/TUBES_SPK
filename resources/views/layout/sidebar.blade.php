@@ -60,13 +60,13 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="../mailbox/read-mail.html" class="nav-link">
-                    <p>Transaksi Barang Masuk</p>
+                  <a href="{{ url('/transaksi_barang_masuk')}}" class="nav-link">
+                    <p>Detail Barang Masuk</p>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="../mailbox/read-mail.html" class="nav-link">
-                    <p>Transaksi Barang Keluar</p>
+                    <p>Detail Barang Keluar</p>
                   </a>
                 </li>
               </ul>
