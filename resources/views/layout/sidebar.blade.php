@@ -55,18 +55,8 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="../mailbox/compose.html" class="nav-link">
+                  <a href="{{ url('/barang_keluar')}}" class="nav-link">
                     <p>Barang Keluar</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="../mailbox/read-mail.html" class="nav-link">
-                    <p>Transaksi Barang Masuk</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="../mailbox/read-mail.html" class="nav-link">
-                    <p>Transaksi Barang Keluar</p>
                   </a>
                 </li>
               </ul>

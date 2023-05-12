@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\barang_masuk;
 use App\Models\transaksi;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,9 @@ class TransaksiController extends Controller
      */
     public function index()
     {
-        //
+        $bm = barang_masuk::paginate(5);
+        return view('transaksi.transaksi_barang_masuk')
+            ->with('bm', $bm);
     }
 
     /**
