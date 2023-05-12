@@ -26,8 +26,7 @@
       <!-- Main content -->
       <section class="content">
         <div class="container-fluid">
-          <!-- Info boxes -->    
-          <!-- Main content -->
+          <!-- Info boxes -->    <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
         <!-- Info boxes -->
