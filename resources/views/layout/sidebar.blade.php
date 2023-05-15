@@ -60,12 +60,26 @@
                   </a>
                 </li>
               </ul>
-            </li>
-            <li class="nav-item">
-              <a href="{{ url('/game') }}" class="nav-link">
+            </li><li class="nav-item menu-close">
+              <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-gamepad"></i>
-                <p>Stok</p>
+                <p>
+                  Stok
+                  <i class="fas fa-angle-left right"></i>
+                </p>
               </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{ url('/barang_masuk')}}" class="nav-link">
+                    <p>Barang Masuk</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ url('/barang_keluar')}}" class="nav-link">
+                    <p>Barang Keluar</p>
+                  </a>
+                </li>
+              </ul>
             </li>
             <li class="nav-item">
               <a href="{{ url('/logout') }}" class="nav-link">
