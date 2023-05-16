@@ -21,5 +21,6 @@ class barang_masuk extends Model
         'merk',
         'warna',
         'ket_barang',
+        'stok_masuk',
     ];
 }

@@ -31,7 +31,7 @@
               <!-- small box -->
               <div class="small-box bg-info">
                 <div class="inner">
-                  <h3>150</h3>
+                  <h3>{{ $countBarangMasuk }}</h3>
   
                   <p>Barang Masuk</p>
                 </div>
@@ -46,7 +46,7 @@
               <!-- small box -->
               <div class="small-box bg-success">
                 <div class="inner">
-                  <h3>53</h3>
+                  <h3>{{ $countBarangKeluar }}</h3>
   
                   <p>Barang keluar</p>
                 </div>

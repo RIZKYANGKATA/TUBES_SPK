@@ -47,7 +47,7 @@
                       @if($stok->count() > 0)
                         @foreach($stok as $st => $s)
                           <tr>
-                            <td>{{++$s}}</td>
+                            <td>{{++$st}}</td>
                             <td>{{$s->kode_barang}}</td>
                             <td>{{$s->nama_barang}}</td>
                             <td>{{$s->kategori_barang}}</td>

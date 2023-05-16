@@ -107,6 +107,13 @@
                         <span class="error invalid-feedback">{{ $message }} </span>
                       @enderror
                     </div>
+                  </div><div class="form-group">
+                    <label>Qty</label>
+                    <input class="form-control @error('stok_masuk') is-invalid @enderror" value="{{ isset($bm)? $bm->stok_masuk : old('stok_masuk') }}" name="stok_masuk" type="text"/>
+                    @error('stok_masuk')
+                      <span class="error invalid-feedback">{{ $message }} </span>
+                    @enderror
+                  </div>
         
         
         

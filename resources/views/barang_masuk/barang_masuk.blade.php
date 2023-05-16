@@ -48,6 +48,7 @@
                         <th>Nama Barang</th>
                         <th>Tanggal</th>
                         <th>Kode Pengguna</th>
+                        <th>Qty</th>
                         <th>Action</th>
                       </tr>
                     </thead>
@@ -60,6 +61,7 @@
                             <td>{{$m->nama_barang}}</td>
                             <td>{{$m->tanggal}}</td>
                             <td>{{$m->kode_pengguna}}</td>
+                            <td>{{$m->stok_masuk}}</td>
                             <td style="display: flex">
 
                               <form method="POST" action="{{ url('/barang_masuk/'.$m->id) }}">

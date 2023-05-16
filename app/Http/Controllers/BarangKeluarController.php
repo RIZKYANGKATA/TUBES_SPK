@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\barang_keluar;
+use App\Models\stok;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BarangKeluarController extends Controller
 {
@@ -45,7 +47,26 @@ class BarangKeluarController extends Controller
     public function store(Request $request)
     {
         
-        $data = barang_keluar::create($request->except(['_token']));
+        // $data = barang_keluar::create($request->except(['_token']));
+
+        // $data2 = DB::table('stok')
+        //     ->where('kode_barang', $request->input('kode_barang'))
+        //     ->get()
+        // ;
+        // foreach($data2 as $d){
+        //     $sm = $d->stok_masuk;
+        // }
+
+        // if($data2->count()==1){
+        //     $inputStok = stok::where('kode_barang', '=', $request->input('kode_barang'))
+        //     ->update([
+        //         'stok_masuk' => $sm - $request->input('stok_masuk'),
+        //     ]);
+        //     ;
+        // }else{
+        //     $inputStok = stok::create($request->except(['_token']));
+        //     //dd($inputStok);
+        // }
 
         return redirect('barang_keluar')
             ->with('success', 'Barang Berhasil Ditambah');

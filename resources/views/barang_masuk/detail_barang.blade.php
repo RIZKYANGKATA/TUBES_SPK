@@ -44,6 +44,7 @@
                         <th>Merk</th>
                         <th>Warna</th>
                         <th>Keterangan Barang</th>
+                        <th>Qty</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -60,6 +61,7 @@
                             <td>{{$bm->merk}}</td>
                             <td>{{$bm->warna}}</td>
                             <td>{{$bm->ket_barang}}</td>
+                            <td>{{$bm->stok_masuk}}</td>
                             <td style="display: flex">
                               </div>
                           </form>

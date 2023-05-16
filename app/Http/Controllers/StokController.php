@@ -15,6 +15,7 @@ class StokController extends Controller
     public function index()
     {
         $stok = stok::all();
+        //dd($stok);
         return view('stok.stok')
             ->with('stok', $stok);
     }
