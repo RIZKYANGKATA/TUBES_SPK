@@ -60,7 +60,8 @@
                   </a>
                 </li>
               </ul>
-            </li><li class="nav-item menu-close">
+            </li>
+            <li class="nav-item menu-close">
               <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-gamepad"></i>
                 <p>
@@ -70,13 +71,13 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="{{ url('/barang_masuk')}}" class="nav-link">
-                    <p>Barang Masuk</p>
+                  <a href="{{ url('/stok')}}" class="nav-link">
+                    <p>Stok saat ini</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="{{ url('/barang_keluar')}}" class="nav-link">
-                    <p>Barang Keluar</p>
+                  <a href="{{ url('/riwayat_stok')}}" class="nav-link">
+                    <p>Riwayat stok barang</p>
                   </a>
                 </li>
               </ul>
