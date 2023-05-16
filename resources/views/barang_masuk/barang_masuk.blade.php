@@ -32,8 +32,10 @@
               <div class="card card-pink card-outline">
                 <div class="card-body">
 
+                  @if(auth()->user()->level == 1)
                   <a href="{{url('barang_masuk/create')}}" class="btn btn-sm btn-success my-2">Tambah Data</a>
 
+                  @endif
                   <form action="{{ url('barang_masuk') }}" method="GET" class="form-inline my-2 my-lg-0">
                     
                     <input class="form-control mr-sm-2 my-2" type="search" name="query" placeholder="Search" aria-label="Search">

@@ -95,6 +95,12 @@
                 <p>Master Data</p>
               </a>
             </li>
+            <li class="nav-item">
+              <form action="{{ url('logout') }}" method="POST">
+                @csrf
+                <button class="btn btn-danger my-2 my-sm-0" type="submit">Logout</button>
+              </form>
+            </li>
           </ul>
         </nav>
         <!-- /.sidebar-menu -->
