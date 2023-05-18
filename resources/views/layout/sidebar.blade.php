@@ -61,26 +61,11 @@
                 </li>
               </ul>
             </li>
-            <li class="nav-item menu-close">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-gamepad"></i>
-                <p>
-                  Stok
-                  <i class="fas fa-angle-left right"></i>
-                </p>
+            <li class="nav-item">
+              <a href="{{ url('/stok') }}" class="nav-link">
+                <i class="nav-icon fas fa-sign-out-alt"></i>
+                <p>Stok Barang</p>
               </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="{{ url('/stok')}}" class="nav-link">
-                    <p>Stok saat ini</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="{{ url('/riwayat_stok')}}" class="nav-link">
-                    <p>Riwayat stok barang</p>
-                  </a>
-                </li>
-              </ul>
             </li>
             <li class="nav-item">
               <a href="{{ url('/logout') }}" class="nav-link">
