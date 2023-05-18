@@ -10,9 +10,11 @@
     <ul class="navbar-nav ml-auto">
       <!-- Navbar Search -->
       <li class="nav-item">
-        <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-          <i class="fas fa-search"></i>
-        </a>
+        <form action="{{ url('logout') }}" method="POST">
+          @csrf
+          <button class="nav-icon fas fa-sign-out-alt" type="submit">Logout</button>
+        </form>
+      </li>
         <div class="navbar-search-block">
           <form class="form-inline">
             <div class="input-group input-group-sm">

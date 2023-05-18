@@ -2,7 +2,7 @@
     <!-- Brand Logo -->
     <a href="../../index3.html" class="brand-link">
       <img src="{{ asset('assets/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8') }}">
-      <span class="brand-text font-weight-light">Proyek 1</span>
+      <span class="brand-text font-weight-light">PROYEK 1</span>
     </a>
 
     <!-- Sidebar -->
@@ -79,12 +79,6 @@
                 <i class="nav-item menu-open"></i>
                 <p>Master Data</p>
               </a>
-            </li>
-            <li class="nav-item">
-              <form action="{{ url('logout') }}" method="POST">
-                @csrf
-                <button class="nav-icon fas fa-sign-out-alt btn-danger" type="submit">Logout</button>
-              </form>
             </li>
           </ul>
         </nav>
