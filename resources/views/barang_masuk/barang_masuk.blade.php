@@ -68,11 +68,16 @@
 
                               <form method="POST" action="{{ url('/barang_masuk/'.$m->id) }}">
                                 <a href="{{ url('/barang_masuk/'. $m->id) }}" class="btn btn-sm btn-secondary mr-2">Detail</a>
+
+                                @if(auth()->user()->level == 1)
                                 <a href="{{ url('/barang_masuk/'. $m->id.'/edit')}}" class="btn btn-sm btn-warning mr-2">Edit</a>
                                 @csrf
+                                @endif
+
+                                @if(auth()->user()->level == 1)
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#hapusModal" onclick="return confirm('Anda yakin ingin menghapus data ini?')">Hapus</button>
-                            
+                                @endif
                                 <!-- Modal -->
                                 {{-- <div class="modal fade" id="hapusModal" tabindex="-1" role="dialog" aria-labelledby="hapusModalLabel" aria-hidden="true">
                                   <div class="modal-dialog" role="document">
