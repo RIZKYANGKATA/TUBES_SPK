@@ -46,7 +46,6 @@
                         <th>Nama Barang</th>
                         <th>Tanggal</th>
                         <th>Kode Pengguna</th>
-                        <th>Qty</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -58,7 +57,6 @@
                             <td>{{$k->nama_barang}}</td>
                             <td>{{$k->tanggal}}</td>
                             <td>{{$k->kode_pengguna}}</td>
-                            <td>{{$k->stok_keluar}}</td>
                             <td style="display: flex">
                             </td>
                           </tr>
