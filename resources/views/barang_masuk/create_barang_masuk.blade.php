@@ -118,7 +118,9 @@
         
         
                     <div class="form-group">
+                      <a href="{{url('barang_masuk')}}" class="btn btn-secondary"><i class="fas fa-arrow-left pr-1"></i>Back</a> 
                       <button type="submit" class="btn btn-sm btn-primary">Simpan</button>
+                      
                     </div>
                   </form>
                 </div>
