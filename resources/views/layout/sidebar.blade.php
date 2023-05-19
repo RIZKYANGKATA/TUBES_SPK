@@ -12,9 +12,16 @@
           <div class="image">
             <img src="{{ asset('assets/dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image') }}">
           </div>
+          @if(auth()->user()->level == 1)
           <div class="info">
             <a href="#" class="d-block">ADMIN</a>
           </div>
+          @endif
+          @if(auth()->user()->level == 2)
+          <div class="info">
+            <a href="#" class="d-block">STAFF</a>
+          </div>
+          @endif
         </div>
     
         <!-- SidebarSearch Form -->
