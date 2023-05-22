@@ -102,7 +102,10 @@
                       @enderror
                     </div><div class="form-group">
                       <label>Keterangan Barang</label>
-                      <input required class="form-control @error('ket_barang') is-invalid @enderror" value="{{ isset($bm)? $bm->ket_barang : old('ket_barang') }}" name="ket_barang" type="text"/>
+                      <select required name="ket_barang" class="form-control @error('ket_barang') is-invalid @enderror" value="{{ isset($bm)? $bm->ket_barang : old('ket_barang') }}" type="text">
+                        <option value="Tersedia">Tersedia</option>
+                        <option value="Habis">Habis</option>
+                      </select>
                       @error('ket_barang')
                         <span class="error invalid-feedback">{{ $message }} </span>
                       @enderror
