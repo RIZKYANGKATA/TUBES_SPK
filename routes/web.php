@@ -3,6 +3,7 @@
 use App\Http\Controllers\BarangKeluarController;
 use App\Http\Controllers\BarangMasukController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\RiwayatStokController;
 use App\Http\Controllers\StokController;
 use App\Http\Controllers\TransaksiController;
@@ -41,6 +42,7 @@ Route::resource('/transaksi_barang_masuk', TransaksiController::class);
 
 Auth::routes();
 Route::middleware('auth')->group(function (){
+    Route::get('/laporan/{kode_barang}/stok/cetak_pdf', [LaporanController::class, 'cetak_pdf']);
     Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::get('/', [DashboardController::class, 'index']);
 

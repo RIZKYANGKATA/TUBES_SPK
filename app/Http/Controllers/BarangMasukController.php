@@ -132,12 +132,12 @@ class BarangMasukController extends Controller
     {
         $barang = barang_masuk::find($id);
         // dd($barang['kode_transaksi']);
-        // barang_keluar::create([
-        //     'kode_transaksi' => $barang['kode_transaksi'],
-        //     'tanggal' => $barang['tanggal'],
-        //     'kode_pengguna' => $barang['kode_pengguna'],
-        //     'nama_barang' => $barang['nama_barang']
-        // ]);
+        barang_keluar::create([
+            'kode_transaksi' => $barang['kode_transaksi'],
+            'tanggal' => $barang['tanggal'],
+            'kode_pengguna' => $barang['kode_pengguna'],
+            'nama_barang' => $barang['nama_barang']
+        ]);
 
         $data2 = DB::table('stok')
             ->where('kode_barang', $barang->kode_barang)

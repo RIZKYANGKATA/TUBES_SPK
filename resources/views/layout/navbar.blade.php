@@ -12,7 +12,10 @@
       <li class="nav-item">
         <form action="{{ url('logout') }}" method="POST">
           @csrf
-          <button class="nav-icon fas fa-sign-out-alt" type="submit">Logout</button>
+          <button class="btn btn-danger" type="submit">
+            <i class="nav-icon fas fa-sign-out-alt"></i>
+            Logout
+          </button>
         </form>
       </li>
         <div class="navbar-search-block">

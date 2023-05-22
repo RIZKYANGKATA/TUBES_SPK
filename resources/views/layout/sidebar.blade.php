@@ -10,7 +10,7 @@
         <!-- Sidebar user (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="image">
-            <img src="{{ asset('assets/dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image') }}">
+            <img src="{{ asset('assets/image/burungg.jpg') }}" class="img-circle elevation-2" alt="User Image') }}">
           </div>
           @if(auth()->user()->level == 1)
           <div class="info">
@@ -49,7 +49,7 @@
             </li>
             <li class="nav-item menu-close">
               <a href="#" class="nav-link">
-                <i class="nav-icon far fa-envelope"></i>
+                <i class="nav-icon fas fa-dollar-sign"></i>
                 <p>
                   Transaksi
                   <i class="fas fa-angle-left right"></i>
@@ -70,19 +70,19 @@
             </li>
             <li class="nav-item">
               <a href="{{ url('/stok') }}" class="nav-link">
-                <i class="nav-icon fas fa-sign-out-alt"></i>
+                <i class="nav-icon fas fa-warehouse"></i>
                 <p>Stok Barang</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="{{ url('/laporan') }}" class="nav-link">
-                <i class="nav-icon fas fa-sign-out-alt"></i>
+              <a href="{{ url('/laporan/0/stok/cetak_pdf') }}" class="nav-link">
+                <i class="nav-icon fas fa-book-dead"></i>
                 <p>Laporan</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="{{ url('/logout') }}" class="nav-link">
-                <i class="nav-icon fas fa-sign-out-alt"></i>
+                <i class="nav-icon fas fa-server"></i>
                 <i class="nav-item menu-open"></i>
                 <p>Master Data</p>
               </a>

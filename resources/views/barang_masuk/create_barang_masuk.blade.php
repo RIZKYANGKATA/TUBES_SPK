@@ -52,7 +52,7 @@
                     </div>
                     <div class="form-group">
                       <label>Tanggal</label>
-                      <input required class="form-control @error('tanggal') is-invalid @enderror" value="{{ isset($bm)? $bm->tanggal : old('tanggal') }}" name="tanggal" type="text" />
+                      <input required class="form-control @error('tanggal') is-invalid @enderror" value="{{ isset($bm)? $bm->tanggal : old('tanggal') }}" name="tanggal" type="date" />
                       @error('tanggal')
                         <span class="error invalid-feedback">{{ $message }} </span>
                       @enderror
@@ -107,7 +107,7 @@
                         <span class="error invalid-feedback">{{ $message }} </span>
                       @enderror
                     </div>
-                  </div><div class="form-group">
+                  <div class="form-group">
                     <label>Qty</label>
                     <input required class="form-control @error('stok_masuk') is-invalid @enderror" value="{{ isset($bm)? $bm->stok_masuk : old('stok_masuk') }}" name="stok_masuk" type="text"/>
                     @error('stok_masuk')

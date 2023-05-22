@@ -61,7 +61,7 @@
               <!-- small box -->
               <div class="small-box bg-warning">
                 <div class="inner">
-                  <h3>8</h3>
+                  <h3>{{ $countStok }}</h3>
   
                   <p>Stok</p>
                 </div>
