@@ -15,15 +15,18 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('assets/dist/css/adminlte.min.css') }}">
 </head>
-<body class="hold-transition login-page">
+<body class="hold-transition login-page" style="background-image: url(assets/image/salju3.png);background-position: center;background-size: cover;background-repeat: no-repeat;">
+  {{-- <div class="" style="">
+    <img src="{{ asset('assets/image/salju.png') }}" alt="">
+  </div> --}}
 <div class="login-box">
   <div class="login-logo">
-    <a href="{{ asset('assets/index2.html') }} "><b>Login</b></a>
+    
   </div>
   <!-- /.login-logo -->
-  <div class="card">
-    <div class="card-body login-card-body">
-      <p class="login-box-msg">Sign in to start your session</p>
+  <div class="card" style="margin-top: 210px">
+    <div class="card-body login-card-body" style="">
+      <b><p class="login-box-msg">Login</p></b>
 
       <form action="{{ asset('/login') }}" method="post">
         @csrf

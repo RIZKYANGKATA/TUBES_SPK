@@ -77,7 +77,7 @@
             <li class="nav-item">
               <a href="{{ url('/laporan/0/stok/cetak_pdf') }}" class="nav-link">
                 <i class="nav-icon fas fa-book-dead"></i>
-                <p>Laporan</p>
+                <p>Cetak Laporan</p>
               </a>
             </li>
             <li class="nav-item">

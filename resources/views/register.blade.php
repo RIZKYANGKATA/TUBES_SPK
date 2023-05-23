@@ -15,15 +15,15 @@
           <!-- Theme style -->
           <link rel="stylesheet" href="{{ asset('assets/dist/css/adminlte.min.css') }}">
         </head>
-        <body class="hold-transition register-page">
+        <body class="hold-transition register-page" style="background-image: url(assets/image/salju6.png);background-position: center;background-size: cover;background-repeat: no-repeat;">
         <div class="register-box">
           <div class="register-logo">
-            <a href="../../index2.html"><b>Register</b></a>
+            
           </div>
         
           <div class="card">
             <div class="card-body register-card-body">
-              <p class="login-box-msg">Register a new membership</p>
+              <b><p class="login-box-msg">Register</p></b>
               <form method="POST" action="register">
                 @csrf
                 {!! (isset($usr))? method_field('PUT') : ''!!}
