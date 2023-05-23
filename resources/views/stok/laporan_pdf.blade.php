@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cetak Laporan</title>
+    <title>CV. Omega Art</title>
 </head>
 <body>
         <style type="text/css">
@@ -20,10 +20,14 @@
             border: 1px solid #262626;
             padding: 0.5rem;
         }
+        table tr th{
+          background-color: chartreuse;
+        }
         </style>
         <center>
-            <h5>LAPORAN DAFTAR BARANG CV OMEGA ART</h5>
-              <P><h3>LOLOLO GA BAHAYA TAAA</h3></P>
+            <h3>CV. OMEGA ART</h3>
+              <P><h3>LAPORAN DAFTAR BARANG</h3></P>
+              <p>-------------------------------------------------------------------------------------------------------------------------------------------------</p>
         </center>
         <div class="card">
             <div class="card-body">
