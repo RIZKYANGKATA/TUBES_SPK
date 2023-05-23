@@ -31,6 +31,8 @@
               <!-- Profile Image -->
               <div class="card card-pink card-outline">
                 <div class="card-body"><table class="table table-bordered table-striped">
+                  
+
                     <thead>
                       <tr>
                         <th>Kode Transaksi</th>

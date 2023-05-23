@@ -31,7 +31,7 @@
               <!-- Profile Image -->
               <div class="card card-pink card-outline">
                 <div class="card-body">
-
+                  
                   @if(auth()->user()->level == 1)
                   <a href="{{url('barang_masuk/create')}}" class="btn btn-sm btn-success my-2">Tambah Data</a>
 
