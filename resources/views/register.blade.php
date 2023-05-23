@@ -23,7 +23,7 @@
         
           <div class="card">
             <div class="card-body register-card-body">
-              <b><p class="login-box-msg">Register</p></b>
+              <b><p class="login-box-msg" style="color:blue">Register</p></b>
               <form method="POST" action="register">
                 @csrf
                 {!! (isset($usr))? method_field('PUT') : ''!!}

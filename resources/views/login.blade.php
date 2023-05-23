@@ -26,7 +26,7 @@
   <!-- /.login-logo -->
   <div class="card" style="margin-top: 210px">
     <div class="card-body login-card-body" style="">
-      <b><p class="login-box-msg">Login</p></b>
+      <b><p class="login-box-msg" style="color: blue">Login</p></b>
 
       <form action="{{ asset('/login') }}" method="post">
         @csrf
