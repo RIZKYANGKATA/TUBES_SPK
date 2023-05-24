@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CV. Omega Art</title>
   <link rel="icon" type="image/x-icon" href="{{ asset('assets/image/salju.png') }}">
+  
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
@@ -20,6 +21,12 @@
   @stack('css_tambahan')
 </head>
 <body class="hold-transition sidebar-mini">
+
+  <!-- Preloader -->
+  <div class="preloader flex-column justify-content-center align-items-center">
+    <img class="animation__wobble" src="{{ asset('assets/image/salju3.png') }}" alt="AdminLTELogo" height="60" width="150">
+  </div>
+
 <!-- Site wrapper -->
 <div class="wrapper">
   <!-- Navbar -->
