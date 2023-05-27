@@ -67,6 +67,8 @@ class BarangMasukController extends Controller
             ]);
             ;
         }else{
+            $request['stok_keluar'] = 0;
+            $request['stok_akhir'] = $request->input('stok_masuk');
             $inputStok = stok::create($request->except(['_token']));
             //dd($inputStok);
         }
