@@ -23,7 +23,7 @@
           </div>
           @endif
         </div>
-    
+
         <!-- SidebarSearch Form -->
         <div class="form-inline">
           <div class="input-group" data-widget="sidebar-search">
@@ -35,7 +35,7 @@
             </div>
           </div>
         </div>
-    
+
         <!-- Sidebar Menu -->
         <nav class="mt-2">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -80,13 +80,15 @@
                 <p>Cetak Laporan</p>
               </a>
             </li>
+            @if(auth()->user()->level == 1)
             <li class="nav-item">
-              <a href="{{ url('/logout') }}" class="nav-link">
+              <a href="{{ url('/master_data') }}" class="nav-link">
                 <i class="nav-icon fas fa-server"></i>
                 <i class="nav-item menu-open"></i>
                 <p>Master Data</p>
               </a>
             </li>
+            @endif
           </ul>
         </nav>
         <!-- /.sidebar-menu -->

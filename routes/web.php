@@ -4,6 +4,7 @@ use App\Http\Controllers\BarangKeluarController;
 use App\Http\Controllers\BarangMasukController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LaporanController;
+use App\Http\Controllers\MasterDataController;
 use App\Http\Controllers\RiwayatStokController;
 use App\Http\Controllers\StokController;
 use App\Http\Controllers\TransaksiController;
@@ -36,6 +37,11 @@ Route::post('/barang_keluar', [BarangKeluarController::class, 'store']);
 Route::get('/barang_keluar/create', [BarangKeluarController::class, 'create']);
 Route::get('/stok', [StokController::class, 'index']);
 Route::get('/riwayat_stok', [RiwayatStokController::class, 'index']);
+Route::get('/master_data', [MasterDataController::class, 'index']);
+Route::get('/master_data/create', [MasterDataController::class, 'create']);
+Route::post('/master_data/create', [MasterDataController::class, 'store']);
+Route::get('/detail_master_data/show/{id}', [MasterDataController::class, 'show']);
+Route::post('/master_data/delete/{id}', [MasterDataController::class, 'destroy']);
 
 Route::resource('/transaksi_barang_masuk', TransaksiController::class);
 
