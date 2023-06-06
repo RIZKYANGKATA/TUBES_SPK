@@ -59,7 +59,7 @@
                             <td>{{$bm->kode_barang}}</td>
                             <td>{{$bm->satuan}}</td>
                             <td>{{$bm->kategori_barang}}</td>
-                            <td>{{$bm->harga_beli}}</td>
+                            <td><b>Rp.</b>{{$bm->harga_beli}}</td>
                             <td>{{$bm->merk}}</td>
                             <td>{{$bm->warna}}</td>
                             <td>{{$bm->ket_barang}}</td>
