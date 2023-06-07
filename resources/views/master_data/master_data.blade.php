@@ -21,7 +21,7 @@
           </div>
         </div><!-- /.container-fluid -->
       </section>
-    <a class="btn btn-success mb-3" href="{{ url('/master_data/create') }}">Tambah Data</a>
+    <a class="btn btn-success mb-3" href="{{ url('/master_data/create') }}">Tambah User</a>
 
       <!-- Main content -->
       <section class="content d-flex justify-content-center">

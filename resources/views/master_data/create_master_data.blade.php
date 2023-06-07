@@ -23,7 +23,7 @@
 
           <div class="card">
             <div class="card-body register-card-body">
-              <b><p class="login-box-msg" style="color:blue">Register</p></b>
+              <b><p class="login-box-msg" style="color:blue">Tambah User</p></b>
               <form method="POST" action="{{ url('/master_data/create') }}">
                 @csrf
                 <div class="input-group mb-3">
@@ -62,7 +62,8 @@
 
                 </div>
                 <div class="form-group">
-                  <button class="btn btn-primary btn-block">Tambah User</button>
+                  <button class="btn btn-primary btn-block">Simpan</button> <br>
+                  <a href="{{url('master_data')}}" class="btn btn-secondary"><i class="fas fa-arrow-left pr-1"></i>Back</a> 
                 </div>
                 {{-- <a href="{{ }}" class="text-center">Kembali</a> --}}
               </form>
