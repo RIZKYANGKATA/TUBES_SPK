@@ -55,3 +55,6 @@ Route::get('/', [DashboardController::class, 'index']);
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/get_barang_masuk', [BarangMasukController::class, 'getBarangMasuk']);
+Route::POST('/delete_barang_masuk/{id}', [BarangMasukController::class, 'destroy']);

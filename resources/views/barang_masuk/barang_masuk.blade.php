@@ -36,14 +36,9 @@
                   <a href="{{url('barang_masuk/create')}}" class="btn btn-sm btn-success my-2">Tambah Data</a>
 
                   @endif
-                  <form action="{{ url('barang_masuk') }}" method="GET" class="form-inline my-2 my-lg-0">
-                    
-                    <input class="form-control mr-sm-2 my-2" type="search" name="query" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-                  </form>
-
-                  <table class="table table-bordered table-striped">
-                    <thead>
+                  
+                  <table class="table table-bordered table-striped" id="dataTables">
+                   <thead>
                       <tr>
                         <th>No</th>
                         <th>Kode Transaksi</th>
@@ -55,6 +50,8 @@
                       </tr>
                     </thead>
                     <tbody>
+                     {{-- 
+
                       @if($bm->count() > 0)
                         @foreach($bm as $b => $m)
                           <tr>
@@ -97,14 +94,15 @@
                                           </div>
                                       </div>
                                   </div> --}}
-                              </div>
+                              {{-- </div>
                           </form>
                           </td>
                         </tr>
-                      @endforeach
-                    @else
+                      @endforeach --}}
+                    {{-- @else
                         <tr><td colspan="6" class="text-center">Data Tidak Ada</td></tr>
                     @endif
+                     --}}
                   </tbody>
                 </table>
                 <div class="d-flex justify-content-center mt-2">
@@ -120,3 +118,41 @@
       </section>
       <!-- /.content -->
 @endsection
+
+@push('js_tambahan')
+<script>
+  let dataTables = null;
+
+  $(document).ready(function() {
+    dataTables = $('#dataTables').DataTable({
+            processing:true,
+            serverside:true,
+            ajax:{
+                'url': '{{  url('/get_barang_masuk') }}',
+                'dataType': 'json',
+                'type': 'GET',
+            },
+            columns:[
+                {data:'nomor',name:'nomor'},
+                {data:'kode_transaksi',name:'kode_transaksi'},
+                {data:'nama_barang',name:'nama_barang'},
+                {data:'tanggal',name:'tanggal'},
+                {data:'kode_pengguna',name:'kode_pengguna'},
+                {data:'stok_masuk',name:'stok_masuk'},
+                {
+                  data: 'id',
+                  render: function(id, type, data) {
+                    return `<a href="{{ url('/barang_masuk/') }}/${id}" class="btn btn-sm btn-secondary mr-2">Detail</a>` + 
+                    `<a href="{{ url('/barang_masuk/')}}/${id}/edit" class="btn btn-sm btn-warning mr-2">Edit</a>`+
+                    `
+                    <form method="POST" action="{{ url('/delete_barang_masuk/') }}/${id}">
+                      @csrf
+                                <button type="submit" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#hapusModal" onclick="return confirm('Anda yakin ingin menghapus data ini?')">Hapus</button>
+                          </form>`;
+                  }
+                }
+            ]
+        });
+  });
+</script>
+@endpush
