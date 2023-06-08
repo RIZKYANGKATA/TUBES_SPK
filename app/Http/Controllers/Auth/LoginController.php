@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
 
 class LoginController extends Controller
 {
@@ -41,5 +43,20 @@ class LoginController extends Controller
     public function showLoginForm()
     {
         return view('login');
+    }
+
+    public function logout(Request $request)
+    {
+        $this->guard()->logout();
+
+        // $request->session()->invalidate();
+
+        // $request->session()->regenerateToken();
+
+        if ($response = $this->loggedOut($request)) {
+            return $response;
+        }
+
+        return redirect('/login');
     }
 }

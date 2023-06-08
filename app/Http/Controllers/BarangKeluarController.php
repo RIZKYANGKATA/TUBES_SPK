@@ -6,6 +6,7 @@ use App\Models\barang_keluar;
 use App\Models\stok;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Yajra\DataTables\DataTables;
 
 class BarangKeluarController extends Controller
 {
@@ -127,5 +128,14 @@ class BarangKeluarController extends Controller
         barang_keluar::where('id', '=', $id)->delete();
         return redirect('barang_keluar')
             ->with('success', 'Barang Berhasil Dihapus');
+    }
+
+    public function getBarangKeluar()
+    {
+        $data = barang_keluar::selectRaw('kode_transaksi, nama_barang, tanggal, kode_pengguna, id');
+
+        return DataTables::of($data)
+                    ->addIndexColumn()
+                    ->make(true);
     }
 }

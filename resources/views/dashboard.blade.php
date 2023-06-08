@@ -72,20 +72,22 @@
               </div>
             </div>
             <!-- ./col -->
+            @if(auth()->user()->level == 1)
             <div class="col-lg-3 col-6">
               <!-- small box -->
               <div class="small-box bg-danger">
                 <div class="inner">
-                  <h3>{{ $countLaporan }}</h3>
+                  <h3>{{ $countMasterData }}</h3>
   
-                  <p>Laporan</p>
+                  <p>Master Data</p>
                 </div>
                 <div class="icon">
                   <i class="ion ion-pie-graph"></i>
                 </div>
-                <a href="{{url('laporan/0/stok/cetak_pdf')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{url('master_data')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
+            @endif
             <!-- ./col -->
           </div>
           <!-- /.row -->

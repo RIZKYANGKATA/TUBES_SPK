@@ -142,13 +142,13 @@
                 {
                   data: 'id',
                   render: function(id, type, data) {
-                    return `<a href="{{ url('/barang_masuk/') }}/${id}" class="btn btn-sm btn-secondary mr-2">Detail</a>` + 
-                    `<a href="{{ url('/barang_masuk/')}}/${id}/edit" class="btn btn-sm btn-warning mr-2">Edit</a>`+
-                    `
+                    return `<a href="{{ url('/barang_masuk/') }}/${id}" class="btn btn-sm btn-secondary mr-2">Detail</a>` +
+                    `@if(auth()->user()->level == 1)<a href="{{ url('/barang_masuk/')}}/${id}/edit" class="btn btn-sm btn-warning mr-2">Edit</a>@endif`+
+                    `@if(auth()->user()->level == 1)
                     <form method="POST" action="{{ url('/delete_barang_masuk/') }}/${id}">
                       @csrf
-                                <button type="submit" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#hapusModal" onclick="return confirm('Anda yakin ingin menghapus data ini?')">Hapus</button>
-                          </form>`;
+                      <button type="submit" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#hapusModal" onclick="return confirm('Anda yakin ingin menghapus data ini?')">Hapus</button>
+                    </form>@endif`;
                   }
                 }
             ]

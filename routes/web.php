@@ -58,3 +58,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/get_barang_masuk', [BarangMasukController::class, 'getBarangMasuk']);
 Route::POST('/delete_barang_masuk/{id}', [BarangMasukController::class, 'destroy']);
+
+Route::get('/get_barang_keluar', [BarangKeluarController::class, 'getBarangKeluar']);
+
+Route::get('/get_stok_barang', [StokController::class, 'getStokBarang']);

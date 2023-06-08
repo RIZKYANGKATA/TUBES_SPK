@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\stok;
 use Illuminate\Http\Request;
+use Yajra\DataTables\DataTables;
 
 class StokController extends Controller
 {
@@ -84,5 +85,14 @@ class StokController extends Controller
     public function destroy(stok $stok)
     {
         //
+    }
+
+    public function getStokBarang()
+    {
+        $data = stok::selectRaw('kode_barang, nama_barang, kategori_barang, stok_masuk, stok_keluar, stok_akhir, id');
+
+        return DataTables::of($data)
+                    ->addIndexColumn()
+                    ->make(true);
     }
 }

@@ -32,13 +32,7 @@
               <div class="card card-pink card-outline">
                 <div class="card-body">
 
-                  <form action="{{ url('barang_keluar') }}" method="GET" class="form-inline my-2 my-lg-0">
-                    
-                    <input class="form-control mr-sm-2 my-2" type="search" name="query" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-                  </form>
-
-                  <table class="table table-bordered table-striped">
+                  <table class="table table-bordered table-striped" id="table_barangKeluar">
                     <thead>
                       <tr>
                         <th>No</th>
@@ -49,7 +43,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                      @if($bk->count() > 0)
+                      {{-- @if($bk->count() > 0)
                         @foreach($bk as $b => $k)
                           <tr>
                             <td>{{++$b}}</td>
@@ -63,11 +57,11 @@
                         @endforeach
                       @else
                           <tr><td colspan="6" class="text-center">Data Tidak Ada</td></tr>
-                      @endif
+                      @endif --}}
                     </tbody>
                   </table>
                   <div class="d-flex justify-content-center mt-2">
-                    {{ $bk->links() }}
+                    
                 </div>
                 <!-- /.card-body -->
               </div>
@@ -79,3 +73,28 @@
       </section>
       <!-- /.content -->
 @endsection
+
+@push('js_tambahan')
+<script>
+  let dataTables = null;
+
+  $(document).ready(function() {
+    dataTables = $('#table_barangKeluar').DataTable({
+            processing:true,
+            serverside:true,
+            ajax:{
+                'url': '{{  url('/get_barang_keluar') }}',
+                'dataType': 'json',
+                'type': 'GET',
+            },
+            columns:[
+                {data:'nomor',name:'nomor'},
+                {data:'kode_transaksi',name:'kode_transaksi'},
+                {data:'nama_barang',name:'nama_barang'},
+                {data:'tanggal',name:'tanggal'},
+                {data:'kode_pengguna',name:'kode_pengguna'},
+            ]
+        });
+  });
+</script>
+@endpush

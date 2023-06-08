@@ -31,7 +31,7 @@
               <!-- Profile Image -->
               <div class="card card-pink card-outline">
                 <div class="card-body">
-                  <table class="table table-bordered table-striped">
+                  <table class="table table-bordered table-striped" id="table_stok">
                     <thead>
                       <tr>
                         <th>No</th>
@@ -44,7 +44,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                      @if($stok->count() > 0)
+                      {{-- @if($stok->count() > 0)
                         @foreach($stok as $st => $s)
                           <tr>
                             <td>{{++$st}}</td>
@@ -73,13 +73,13 @@
                                               <button type="submit" class="btn btn-danger">Hapus</button>
                                           </div>
                                       </div>
-                                  </div> --}}
+                                  </div>
                             </td>
                           </tr>
                       @endforeach
                     @else
                           <tr><td colspan="7" class="text-center">Data Tidak Ada</td></tr>
-                    @endif
+                    @endif --}}
                   </tbody>
                 </table>
                 {{-- <div class="d-flex justify-content-center mt-2">
@@ -94,3 +94,30 @@
       </section>
       <!-- /.content -->
 @endsection
+
+@push('js_tambahan')
+<script>
+  let dataTables = null;
+
+  $(document).ready(function() {
+    dataTables = $('#table_stok').DataTable({
+            processing:true,
+            serverside:true,
+            ajax:{
+                'url': '{{  url('/get_stok_barang') }}',
+                'dataType': 'json',
+                'type': 'GET',
+            },
+            columns:[
+                {data:'nomor',name:'nomor'},
+                {data:'kode_barang',name:'kode_barang'},
+                {data:'nama_barang',name:'nama_barang'},
+                {data:'kategori_barang',name:'kategori_barang'},
+                {data:'stok_masuk',name:'stok_masuk'},
+                {data:'stok_keluar',name:'stok_keluar'},
+                {data:'stok_akhir',name:'stok_akhir'},
+            ]
+        });
+  });
+</script>
+@endpush
