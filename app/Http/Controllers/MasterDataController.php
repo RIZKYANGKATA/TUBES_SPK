@@ -57,7 +57,8 @@ class MasterDataController extends Controller
             'level' => $request->input('level'),
         ]);
 
-        return view('master_data.master_data');
+        $user_list = User::where('level', '1')->orWhere('level', '2')->get();
+        return view('master_data.master_data')->with('user_list', $user_list);
     }
 
     /**
