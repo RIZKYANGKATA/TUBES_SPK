@@ -21,22 +21,22 @@
           </div>
         </div><!-- /.container-fluid -->
       </section>
-  
+
       <!-- Main content -->
       <section class="content">
         <div class="container-fluid">
           <div class="row">
             <div class="col">
-  
+
               <!-- Profile Image -->
               <div class="card card-pink card-outline">
                 <div class="card-body">
-                  
+
                   @if(auth()->user()->level == 1)
                   <a href="{{url('barang_masuk/create')}}" class="btn btn-sm btn-success my-2">Tambah Data</a>
 
                   @endif
-                  
+
                   <table class="table table-bordered table-striped" id="dataTables">
                    <thead>
                       <tr>
@@ -50,7 +50,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                     {{-- 
+                     {{--
 
                       @if($bm->count() > 0)
                         @foreach($bm as $b => $m)
@@ -106,8 +106,8 @@
                   </tbody>
                 </table>
                 <div class="d-flex justify-content-center mt-2">
-                  {{ $bm->links() }}
-              </div>
+                    
+                </div>
                 <!-- /.card-body -->
               </div>
               <!-- /.card -->
