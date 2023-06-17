@@ -31,11 +31,7 @@
               <!-- Profile Image -->
               <div class="card card-pink card-outline">
                 <div class="card-body">
-
-                  @if(auth()->user()->level == 1)
                   <a href="{{url('barang_masuk/create')}}" class="btn btn-sm btn-success my-2">Tambah Data</a>
-
-                  @endif
 
                   <table class="table table-bordered table-striped" id="dataTables">
                    <thead>
@@ -106,7 +102,7 @@
                   </tbody>
                 </table>
                 <div class="d-flex justify-content-center mt-2">
-                    
+
                 </div>
                 <!-- /.card-body -->
               </div>
@@ -143,12 +139,12 @@
                   data: 'id',
                   render: function(id, type, data) {
                     return `<a href="{{ url('/barang_masuk/') }}/${id}" class="btn btn-sm btn-secondary mr-2">Detail</a>` +
-                    `@if(auth()->user()->level == 1)<a href="{{ url('/barang_masuk/')}}/${id}/edit" class="btn btn-sm btn-warning mr-2">Edit</a>@endif`+
-                    `@if(auth()->user()->level == 1)
+                    `<a href="{{ url('/barang_masuk/')}}/${id}/edit" class="btn btn-sm btn-warning mr-2">Edit</a>`+
+                    `
                     <form method="POST" action="{{ url('/delete_barang_masuk/') }}/${id}">
                       @csrf
                       <button type="submit" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#hapusModal" onclick="return confirm('Anda yakin ingin menghapus data ini?')">Hapus</button>
-                    </form>@endif`;
+                    </form>`;
                   }
                 }
             ]
