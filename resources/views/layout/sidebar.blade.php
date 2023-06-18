@@ -14,12 +14,12 @@
           </div>
           @if(auth()->user()->level == 1)
           <div class="info">
-            <a href="#" class="d-block">ADMIN</a>
+            <a href="{{ url('edit_user') }}" class="d-block">ADMIN</a>
           </div>
           @endif
           @if(auth()->user()->level == 2)
           <div class="info">
-            <a href="#" class="d-block">STAFF</a>
+            <a href="{{ url('edit_user') }}" class="d-block">STAFF</a>
           </div>
           @endif
         </div>

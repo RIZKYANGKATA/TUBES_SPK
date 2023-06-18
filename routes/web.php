@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\BarangKeluarController;
 use App\Http\Controllers\BarangMasukController;
 use App\Http\Controllers\DashboardController;
@@ -62,3 +63,4 @@ Route::POST('/delete_barang_masuk/{id}', [BarangMasukController::class, 'destroy
 Route::get('/get_barang_keluar', [BarangKeluarController::class, 'getBarangKeluar']);
 
 Route::get('/get_stok_barang', [StokController::class, 'getStokBarang']);
+Route::get('/edit_user', [RegisterController::class, 'getUser']);
