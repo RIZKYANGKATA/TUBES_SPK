@@ -51,6 +51,10 @@ Auth::routes();
 Route::middleware('auth')->group(function (){
     Route::get('/laporan/{kode_barang}/stok/cetak_pdf', [LaporanController::class, 'cetak_pdf']);
     Route::get('/dashboard', [DashboardController::class, 'index']);
+    Route::get('/edit_user/{id}', [DashboardController::class, 'getUser']);
+    Route::put('/edit_user/{id}', [DashboardController::class, 'updateUser']);
+    Route::get('/detail_user/{id}', [DashboardController::class, 'showUser']);
+
 Route::get('/', [DashboardController::class, 'index']);
 
 });
@@ -63,4 +67,3 @@ Route::POST('/delete_barang_masuk/{id}', [BarangMasukController::class, 'destroy
 Route::get('/get_barang_keluar', [BarangKeluarController::class, 'getBarangKeluar']);
 
 Route::get('/get_stok_barang', [StokController::class, 'getStokBarang']);
-Route::get('/edit_user', [RegisterController::class, 'getUser']);

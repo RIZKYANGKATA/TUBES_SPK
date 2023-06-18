@@ -104,11 +104,4 @@ class RegisterController extends Controller
     //         'password' => Hash::make($data['password']),
     //     ]);
     // }
-
-    public function getUser($id) {
-        $usr = User::find($id);
-        return view ('user.edit_user')
-                    ->with('usr', $usr)
-                    ->with('url_form', url('/edit_user/'. $id));
-    }
 }

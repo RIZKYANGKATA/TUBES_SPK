@@ -23,6 +23,21 @@
   <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome-free/css/regular.min.css') }}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('assets/dist/css/adminlte.min.css') }}">
+  <style>
+    .rotate {
+    animation: rotateAnimation 0.3s forwards;
+}
+
+@keyframes rotateAnimation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-90deg);
+    }
+}
+
+  </style>
   @stack('css_tambahan')
 </head>
 <body class="hold-transition sidebar-mini">
@@ -85,6 +100,13 @@
 <script src="{{ asset('assets/dist/js/adminlte.min.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('assets/dist/js/demo.js') }}"></script>
+<script>
+  function toggleDropdown(element) {
+    var icon = element.querySelector('.fas.fa-angle-left');
+    icon.classList.toggle('rotate');
+}
+
+</script>
 @stack('js_tambahan')
 </body>
 </html>

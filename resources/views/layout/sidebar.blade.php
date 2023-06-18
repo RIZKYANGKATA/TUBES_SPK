@@ -10,19 +10,23 @@
         <!-- Sidebar user (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="image">
-            <img src="{{ asset('assets/image/burungg.jpg') }}" class="img-circle elevation-2" alt="User Image') }}">
+              <img src="{{ asset('assets/image/burungg.jpg') }}" class="img-circle elevation-2" alt="User Image') }}">
           </div>
-          @if(auth()->user()->level == 1)
-          <div class="info">
-            <a href="{{ url('edit_user') }}" class="d-block">ADMIN</a>
-          </div>
-          @endif
-          @if(auth()->user()->level == 2)
-          <div class="info">
-            <a href="{{ url('edit_user') }}" class="d-block">STAFF</a>
-          </div>
-          @endif
-        </div>
+          <nav class="nav flex-column nav-tree">
+              <a class="nav-link" data-toggle="collapse" href="#userDropdown" role="button" aria-expanded="false" aria-controls="userDropdown" onclick="toggleDropdown(this)">
+                  @if(auth()->user()->level == 1)
+                      ADMIN
+                  @elseif(auth()->user()->level == 2)
+                      STAFF
+                  @endif
+                  <i class="fas fa-angle-left right"></i>
+              </a>
+              <div class="collapse" id="userDropdown">
+                  <a class="nav-link" href="{{ url('detail_user/'. Auth::user()->id ) }}">Detail</a>
+                  <a class="nav-link" href="{{ url('edit_user/'. Auth::user()->id ) }}">Edit</a>
+              </div>
+          </nav>
+      </div>      
 
         <!-- SidebarSearch Form -->
         <div class="form-inline">
