@@ -67,3 +67,6 @@ Route::POST('/delete_barang_masuk/{id}', [BarangMasukController::class, 'destroy
 Route::get('/get_barang_keluar', [BarangKeluarController::class, 'getBarangKeluar']);
 
 Route::get('/get_stok_barang', [StokController::class, 'getStokBarang']);
+
+Route::get('/barang_keluar/create', [BarangKeluarController::class, 'create']);
+

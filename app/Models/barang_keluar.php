@@ -13,6 +13,7 @@ class barang_keluar extends Model
         'kode_transaksi',
         'nama_barang',
         'tanggal',
-        'kode_pengguna'
+        'kode_pengguna',
+        'stok_keluar'
     ];
 }

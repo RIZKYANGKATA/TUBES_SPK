@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\barang_keluar;
+use App\Models\barang_masuk;
 use App\Models\stok;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -25,6 +26,7 @@ class BarangKeluarController extends Controller
         } else {
             $bk = barang_keluar::paginate(3);
         }
+
         return view('barang_keluar.barang_keluar', ['bk' => $bk]);
     }
 
@@ -35,8 +37,15 @@ class BarangKeluarController extends Controller
      */
     public function create()
     {
+DB::statement("SET SQL_MODE=''");
+
+        $brgMasuk = DB::table('barang_masuk')
+    ->groupBy('kode_barang')
+    ->get();
+
         return view('barang_keluar.create_barang_keluar')
-            ->with('url_form', url('/barang_keluar'));
+            ->with('url_form', url('/barang_keluar'))
+            ->with('brgMasuk', $brgMasuk);;
     }
 
     /**
@@ -48,26 +57,33 @@ class BarangKeluarController extends Controller
     public function store(Request $request)
     {
         
-        // $data = barang_keluar::create($request->except(['_token']));
+        barang_keluar::create([
+            'kode_transaksi' => $request->input('kode_transaksi'),
+            'tanggal' => $request->input('tanggal'),
+            'nama_barang' => $request->input('nama_barang'),
+            'stok_keluar' => $request->input('stok_keluar'),
+        ]);
 
-        // $data2 = DB::table('stok')
-        //     ->where('kode_barang', $request->input('kode_barang'))
-        //     ->get()
-        // ;
-        // foreach($data2 as $d){
-        //     $sm = $d->stok_masuk;
-        // }
+        $data2 = DB::table('stok')
+            ->where('kode_barang', $request->input('kode_barang'))
+            ->get()
+        ;
+        foreach($data2 as $d){
+            $sm = $d->stok_masuk;
+            $sk = $d->stok_keluar;
+        }
 
-        // if($data2->count()==1){
-        //     $inputStok = stok::where('kode_barang', '=', $request->input('kode_barang'))
-        //     ->update([
-        //         'stok_masuk' => $sm - $request->input('stok_masuk'),
-        //     ]);
-        //     ;
-        // }else{
-        //     $inputStok = stok::create($request->except(['_token']));
-        //     //dd($inputStok);
-        // }
+        if($data2->count()==1){
+            $inputStok = stok::where('kode_barang', '=', $request->input('kode_barang'))
+            ->update([
+                'stok_keluar' => $sk + $request->input('stok_keluar'),
+                'stok_akhir' => $sm - $request->input('stok_keluar') - $sk,
+            ]);
+            ;
+        }else{
+            $inputStok = stok::create($request->except(['_token']));
+            //dd($inputStok);
+        }
 
         return redirect('barang_keluar')
             ->with('success', 'Barang Berhasil Ditambah');
@@ -132,7 +148,7 @@ class BarangKeluarController extends Controller
 
     public function getBarangKeluar()
     {
-        $data = barang_keluar::selectRaw('kode_transaksi, nama_barang, tanggal, kode_pengguna, id');
+        $data = barang_keluar::selectRaw('kode_transaksi, nama_barang, tanggal, kode_pengguna, id, stok_keluar');
 
         return DataTables::of($data)
                     ->addIndexColumn()

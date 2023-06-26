@@ -1,7 +1,7 @@
 @extends('layout.template')
 
 @section('title')
-  Barang Keluar
+  Barang Masuk
 @endsection
 
 @section('content')
@@ -21,47 +21,86 @@
           </div>
         </div><!-- /.container-fluid -->
       </section>
-  
+
       <!-- Main content -->
       <section class="content">
         <div class="container-fluid">
           <div class="row">
             <div class="col">
-  
+
               <!-- Profile Image -->
               <div class="card card-pink card-outline">
                 <div class="card-body">
+                  <a href="{{url('barang_keluar/create')}}" class="btn btn-sm btn-success my-2">Tambah Data</a>
 
-                  <table class="table table-bordered table-striped" id="table_barangKeluar">
-                    <thead>
+                  <table class="table table-bordered table-striped" id="dataTables">
+                   <thead>
                       <tr>
                         <th>No</th>
                         <th>Kode Transaksi</th>
                         <th>Nama Barang</th>
                         <th>Tanggal</th>
-                        <th>Kode Pengguna</th>
+                        <th>Qty</th>
                       </tr>
                     </thead>
                     <tbody>
-                      {{-- @if($bk->count() > 0)
-                        @foreach($bk as $b => $k)
+                     {{--
+
+                      @if($bm->count() > 0)
+                        @foreach($bm as $b => $m)
                           <tr>
                             <td>{{++$b}}</td>
-                            <td>{{$k->kode_transaksi}}</td>
-                            <td>{{$k->nama_barang}}</td>
-                            <td>{{$k->tanggal}}</td>
-                            <td>{{$k->kode_pengguna}}</td>
+                            <td>{{$m->kode_transaksi}}</td>
+                            <td>{{$m->nama_barang}}</td>
+                            <td>{{$m->tanggal}}</td>
+                            <td>{{$m->kode_pengguna}}</td>
+                            <td>{{$m->stok_masuk}}</td>
                             <td style="display: flex">
-                            </td>
-                          </tr>
-                        @endforeach
-                      @else
-                          <tr><td colspan="6" class="text-center">Data Tidak Ada</td></tr>
-                      @endif --}}
-                    </tbody>
-                  </table>
-                  <div class="d-flex justify-content-center mt-2">
-                    
+
+                              <form method="POST" action="{{ url('/barang_masuk/'.$m->id) }}">
+                                <a href="{{ url('/barang_masuk/'. $m->id) }}" class="btn btn-sm btn-secondary mr-2">Detail</a>
+
+                                @if(auth()->user()->level == 1)
+                                <a href="{{ url('/barang_masuk/'. $m->id.'/edit')}}" class="btn btn-sm btn-warning mr-2">Edit</a>
+                                @csrf
+                                @endif
+
+                                @if(auth()->user()->level == 1)
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#hapusModal" onclick="return confirm('Anda yakin ingin menghapus data ini?')">Hapus</button>
+                                @endif
+                                <!-- Modal -->
+                                {{-- <div class="modal fade" id="hapusModal" tabindex="-1" role="dialog" aria-labelledby="hapusModalLabel" aria-hidden="true">
+                                  <div class="modal-dialog" role="document">
+                                      <div class="modal-content">
+                                          <div class="modal-header">
+                                              <h5 class="modal-title" id="hapusModalLabel">Konfirmasi Hapus</h5>
+                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                  <span aria-hidden="true">&times;</span>
+                                              </button>
+                                          </div>
+                                          <div class="modal-body">
+                                              Apakah Anda yakin ingin menghapus data ini?
+                                          </div>
+                                          <div class="modal-footer">
+                                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                                              <button type="submit" class="btn btn-danger">Hapus</button>
+                                          </div>
+                                      </div>
+                                  </div> --}}
+                              {{-- </div>
+                          </form>
+                          </td>
+                        </tr>
+                      @endforeach --}}
+                    {{-- @else
+                        <tr><td colspan="6" class="text-center">Data Tidak Ada</td></tr>
+                    @endif
+                     --}}
+                  </tbody>
+                </table>
+                <div class="d-flex justify-content-center mt-2">
+
                 </div>
                 <!-- /.card-body -->
               </div>
@@ -79,7 +118,7 @@
   let dataTables = null;
 
   $(document).ready(function() {
-    dataTables = $('#table_barangKeluar').DataTable({
+    dataTables = $('#dataTables').DataTable({
             processing:true,
             serverside:true,
             ajax:{
@@ -92,7 +131,7 @@
                 {data:'kode_transaksi',name:'kode_transaksi'},
                 {data:'nama_barang',name:'nama_barang'},
                 {data:'tanggal',name:'tanggal'},
-                {data:'kode_pengguna',name:'kode_pengguna'},
+                {data:'stok_keluar',name:'stok_keluar'}
             ]
         });
   });
