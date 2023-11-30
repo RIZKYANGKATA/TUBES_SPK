@@ -48,7 +48,13 @@
             <li class="nav-item">
               <a href="{{ url('/dashboard') }}" class="nav-link">
                 <i class="nav-icon fas fa-user"></i>
-                <p>Sidebar 1</p>
+                <p>Criteria</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ url('/dashboard') }}" class="nav-link">
+                <i class="nav-icon fas fa-user"></i>
+                <p>Sub Criteria</p>
               </a>
             </li>
             {{-- <li class="nav-item menu-close">
@@ -75,13 +81,13 @@
             <li class="nav-item">
               <a class="nav-link">
                 <i class="nav-icon fas fa-warehouse"></i>
-                <p>Sidebar 2</p>
+                <p>Alternatif</p>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link">
                 <i class="nav-icon fas fa-book-dead"></i>
-                <p>Sidebar 3</p>
+                <p>Perhitungan</p>
               </a>
             </li>
             {{-- @if(auth()->user()->level == 1)
