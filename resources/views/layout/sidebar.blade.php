@@ -2,7 +2,7 @@
     <!-- Brand Logo -->
     <a href="../../index3.html" class="brand-link">
       <img src="{{ asset('assets/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8') }}">
-      <span class="brand-text font-weight-light">PROYEK 1</span>
+      <span class="brand-text font-weight-light">TUBES SPK</span>
     </a>
 
     <!-- Sidebar -->
@@ -12,7 +12,7 @@
           <div class="image">
               <img src="{{ asset('assets/image/burungg.jpg') }}" class="img-circle elevation-2" alt="User Image') }}">
           </div>
-          <nav class="nav flex-column nav-tree">
+          {{-- <nav class="nav flex-column nav-tree">
               <a class="nav-link" data-toggle="collapse" href="#userDropdown" role="button" aria-expanded="false" aria-controls="userDropdown" onclick="toggleDropdown(this)">
                   @if(auth()->user()->level == 1)
                       ADMIN
@@ -25,7 +25,7 @@
                   <a class="nav-link" href="{{ url('detail_user/'. Auth::user()->id ) }}">Detail</a>
                   <a class="nav-link" href="{{ url('edit_user/'. Auth::user()->id ) }}">Edit</a>
               </div>
-          </nav>
+          </nav> --}}
       </div>      
 
         <!-- SidebarSearch Form -->
@@ -48,10 +48,10 @@
             <li class="nav-item">
               <a href="{{ url('/dashboard') }}" class="nav-link">
                 <i class="nav-icon fas fa-user"></i>
-                <p>Dashboard</p>
+                <p>Sidebar 1</p>
               </a>
             </li>
-            <li class="nav-item menu-close">
+            {{-- <li class="nav-item menu-close">
               <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-dollar-sign"></i>
                 <p>
@@ -71,20 +71,20 @@
                   </a>
                 </li>
               </ul>
-            </li>
+            </li> --}}
             <li class="nav-item">
-              <a href="{{ url('/stok') }}" class="nav-link">
+              <a class="nav-link">
                 <i class="nav-icon fas fa-warehouse"></i>
-                <p>Stok Barang</p>
+                <p>Sidebar 2</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="{{ url('/laporan/0/stok/cetak_pdf') }}" class="nav-link">
+              <a class="nav-link">
                 <i class="nav-icon fas fa-book-dead"></i>
-                <p>Cetak Laporan</p>
+                <p>Sidebar 3</p>
               </a>
             </li>
-            @if(auth()->user()->level == 1)
+            {{-- @if(auth()->user()->level == 1)
             <li class="nav-item">
               <a href="{{ url('/master_data') }}" class="nav-link">
                 <i class="nav-icon fas fa-server"></i>
@@ -92,7 +92,7 @@
                 <p>Master Data</p>
               </a>
             </li>
-            @endif
+            @endif --}}
           </ul>
         </nav>
         <!-- /.sidebar-menu -->

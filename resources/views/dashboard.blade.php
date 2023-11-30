@@ -4,7 +4,7 @@
     Dashboard
 @endsection
 
-@section('content')
+{{-- @section('content')
     <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">
@@ -93,7 +93,7 @@
           <!-- /.row -->
         </div>
       </section>
-@endsection
+@endsection --}}
 
 @push('custom_js')
     <script>alert('Selamat Datang')</script>
