@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateSubKriteriasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('retur', function (Blueprint $table) {
+        Schema::create('sub_kriterias', function (Blueprint $table) {
             $table->id();
-            $table->date('tanggal')->nullable();
-            $table->string('no_invoice', 10)->nullable();
-            $table->string('kode_barang', 10)->nullable();
+            $table->string('range_kriteria');
+            $table->integer('value');
+            $table->unsignedBigInteger('id_kriteria');
             $table->timestamps();
+            $table->foreign('id_kriteria')->references('id')->on('kriterias')->onDelete('cascade');
         });
     }
 
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('returs');
+        Schema::dropIfExists('sub_kriterias');
     }
-};
+}

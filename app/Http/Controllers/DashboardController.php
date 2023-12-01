@@ -24,6 +24,7 @@ class DashboardController extends Controller
     }
 
     public function show_criteria(){
+        
         return view('criteria');
     }
 

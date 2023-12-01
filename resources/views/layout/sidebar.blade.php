@@ -46,40 +46,19 @@
             <!-- Add icons to the links using the .nav-icon class
                  with font-awesome or any other icon font library -->
             <li class="nav-item">
-              <a href="{{ url('/criteria') }}" class="nav-link">
+              <a href="{{ url('/kriteria') }}" class="nav-link">
                 <i class="nav-icon fas fa-user"></i>
                 <p>Criteria</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="{{ url('/sub_criteria')}}" class="nav-link">
+              <a href="{{ url('/sub_kriteria')}}" class="nav-link">
                 <i class="nav-icon fas fa-user"></i>
                 <p>Sub Criteria</p>
               </a>
             </li>
-            {{-- <li class="nav-item menu-close">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-dollar-sign"></i>
-                <p>
-                  Transaksi
-                  <i class="fas fa-angle-left right"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="{{ url('/barang_masuk')}}" class="nav-link">
-                    <p>Barang Masuk</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="{{ url('/barang_keluar')}}" class="nav-link">
-                    <p>Barang Keluar</p>
-                  </a>
-                </li>
-              </ul>
-            </li> --}}
             <li class="nav-item">
-              <a class="nav-link">
+              <a href="{{ url('/alternatif')}}" class="nav-link">
                 <i class="nav-icon fas fa-warehouse"></i>
                 <p>Alternatif</p>
               </a>
@@ -90,15 +69,13 @@
                 <p>Perhitungan</p>
               </a>
             </li>
-            {{-- @if(auth()->user()->level == 1)
-            <li class="nav-item">
-              <a href="{{ url('/master_data') }}" class="nav-link">
-                <i class="nav-icon fas fa-server"></i>
-                <i class="nav-item menu-open"></i>
-                <p>Master Data</p>
+          
+             <li class="nav-item">
+              <a class="nav-link">
+                <i class="nav-icon fas fa-book-dead"></i>
+                <p>Hasil Akhir</p>
               </a>
             </li>
-            @endif --}}
           </ul>
         </nav>
         <!-- /.sidebar-menu -->
