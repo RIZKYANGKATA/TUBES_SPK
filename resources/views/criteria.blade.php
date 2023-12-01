@@ -1,7 +1,7 @@
 @extends('layout.template')
 
 @section('title')
-  Detail Barang Masuk
+  Kriteria
 @endsection
 
 @section('content')
@@ -10,55 +10,46 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1>Detail Barang Masuk</h1>
+              <h1>Kriteria</h1>
             </div>
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active">Barang Masuk</li>
+                <li class="breadcrumb-item"><a href="{{ url('dashboard') }}">Home</a></li>
+                <li class="breadcrumb-item active">TUBES SPK</li>
               </ol>
             </div>
           </div>
         </div><!-- /.container-fluid -->
       </section>
-  
+
       <!-- Main content -->
       <section class="content">
         <div class="container-fluid">
           <div class="row">
             <div class="col">
-  
+
               <!-- Profile Image -->
               <div class="card card-pink card-outline">
                 <div class="card-body">
-                  </form>
+                  <a href="{{url('barang_masuk/create')}}" class="btn btn-sm btn-success my-2">Tambah Data</a>
 
                   <table class="table table-bordered table-striped">
-                    <thead>
+                   <thead>
                       <tr>
                         <th>No</th>
-                        <th>Kode Transaksi</th>
-                        <th>Tanggal</th>
-                        <th>Kode Pengguna</th>
+                        <th>Nama Criteria</th>
+                        <th>Jenis Criteria</th>
+                        <th>Bobot Criteria</th>
+                        <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
-                      @if($bm->count() > 0)
-                        @foreach($bm as $b => $m)
-                          <tr>
-                            <td>{{++$b}}</td>
-                            <td>{{$m->kode_transaksi}}</td>
-                            <td>{{$m->tanggal}}</td>
-                            <td>{{$m->kode_pengguna}}</td>
-                          </tr>
-                        @endforeach
-                      @else
-                          <tr><td colspan="6" class="text-center">Data Tidak Ada</td></tr>
-                      @endif
-                    </tbody>
-                  </table>
-                  <div class="d-flex justify-content-center mt-2">
-                    {{ $bm->links() }}
+                     
+                    
+                  </tbody>
+                </table>
+                <div class="d-flex justify-content-center mt-2">
+
                 </div>
                 <!-- /.card-body -->
               </div>
@@ -70,3 +61,9 @@
       </section>
       <!-- /.content -->
 @endsection
+
+@push('js_tambahan')
+<script>
+  
+</script>
+@endpush

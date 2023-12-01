@@ -46,13 +46,13 @@
             <!-- Add icons to the links using the .nav-icon class
                  with font-awesome or any other icon font library -->
             <li class="nav-item">
-              <a href="{{ url('/dashboard') }}" class="nav-link">
+              <a href="{{ url('/criteria') }}" class="nav-link">
                 <i class="nav-icon fas fa-user"></i>
                 <p>Criteria</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="{{ url('/dashboard') }}" class="nav-link">
+              <a href="{{ url('/sub_criteria')}}" class="nav-link">
                 <i class="nav-icon fas fa-user"></i>
                 <p>Sub Criteria</p>
               </a>
