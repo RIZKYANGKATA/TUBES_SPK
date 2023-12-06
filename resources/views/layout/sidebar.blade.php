@@ -29,7 +29,7 @@
       </div>      
 
         <!-- SidebarSearch Form -->
-        <div class="form-inline">
+        {{-- <div class="form-inline">
           <div class="input-group" data-widget="sidebar-search">
             <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
             <div class="input-group-append">
@@ -38,7 +38,7 @@
               </button>
             </div>
           </div>
-        </div>
+        </div> --}}
 
         <!-- Sidebar Menu -->
         <nav class="mt-2">
@@ -64,14 +64,14 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link">
+              <a href="{{ url('/perhitungan')}}" class="nav-link">
                 <i class="nav-icon fas fa-book-dead"></i>
                 <p>Perhitungan</p>
               </a>
             </li>
           
              <li class="nav-item">
-              <a class="nav-link">
+              <a href="{{ url('/hasil_akhir')}}" class="nav-link">
                 <i class="nav-icon fas fa-book-dead"></i>
                 <p>Hasil Akhir</p>
               </a>
