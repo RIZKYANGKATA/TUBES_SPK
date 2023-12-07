@@ -132,7 +132,7 @@
                         <div class="form-group">
                             <label for="nama">Rentang Kriteria</label>
                             <input type="text" class="form-control" id="updateRangeKriteria"
-                                placeholder="Masukkan Rentang Kriteria" name="rangeKriteria">
+                                placeholder="Masukkan Rentang Kriteria" name="range_kriteria">
                         </div>
                         <div class="form-group">
                             <label for="bobot">Nilai</label>

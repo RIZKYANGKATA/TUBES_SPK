@@ -10,7 +10,7 @@
         <!-- Sidebar user (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="image">
-              <img src="{{ asset('assets/image/burungg.jpg') }}" class="img-circle elevation-2" alt="User Image') }}">
+              {{-- <img src="{{ asset('assets/image/burungg.jpg') }}" class="img-circle elevation-2" alt="User Image') }}"> --}}
           </div>
           {{-- <nav class="nav flex-column nav-tree">
               <a class="nav-link" data-toggle="collapse" href="#userDropdown" role="button" aria-expanded="false" aria-controls="userDropdown" onclick="toggleDropdown(this)">
@@ -53,7 +53,7 @@
             </li>
             <li class="nav-item">
               <a href="{{ url('/sub_kriteria')}}" class="nav-link">
-                <i class="nav-icon fas fa-user"></i>
+                <i class="fas fa-user-cog"></i>
                 <p>Sub Criteria</p>
               </a>
             </li>
@@ -65,7 +65,7 @@
             </li>
             <li class="nav-item">
               <a href="{{ url('/perhitungan')}}" class="nav-link">
-                <i class="nav-icon fas fa-book-dead"></i>
+                <i class="nav-icon fas fa-calculator"></i>
                 <p>Perhitungan</p>
               </a>
             </li>
