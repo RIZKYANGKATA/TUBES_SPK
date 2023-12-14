@@ -56,47 +56,16 @@
 
                                 <td>
                                     <button data-toggle="modal" data-target="#inputNilai"
-                                        onclick='setAlternatif(@json($item))' class="btn btn-warning">Input
+                                        onclick='setAlternatif(@json($item), @json($alternatifKriteriaGrouped[$item->id]))' class="btn btn-warning">Input
                                         Nilai</button>
-                                    {{-- <form action="{{ url('kriteria/' . $item->id) }}" method="POST" class="d-inline">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button class="btn btn-danger">Hapus</button>
-                                    </form> --}}
                                 </td>
                             </tr>
                         @endforeach
                     </tbody>
                 </table>
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <form action="{{ url('alternatif') }}" method="POST">
-                                    @csrf
-                                    <div class="form-group">
-                                        <label for="nama">Nama Alternatif</label>
-                                        <input type="text" class="form-control" id="nama"
-                                            placeholder="Masukkan nama alternatif" name="nama_alternatif">
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="submit" class="btn btn-primary">Submit</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
-            <!-- Modal -->
-            <div class="modal fade" id="inputNilai" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            <!-- Modal dari Sub Criteria-->
+            {{-- <div class="modal fade" id="inputNilai" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
@@ -121,8 +90,39 @@
                                             @endforeach
                                             <input name="id[]" id="idKriteria" type="hidden"
                                                 value="{{ $krt->id }}">
-                                            {{-- <input type="text" class="form-control" id="nama"
-                                            placeholder="Masukkan nama alternatif" name="value[]"> --}}
+                                    </div>
+                                @endforeach
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div> --}}
+            {{-- Modif Modal input keyboard --}}
+            <div class="modal fade" id="inputNilai" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="namaAlternatif"></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="{{ url('alternatif_kriteria') }}" method="POST">
+                                @csrf
+                                <input name="id_alternatif" id="idAlternatif" type="hidden">
+                                @foreach ($kriteria as $krt)
+                                    <div class="form-group">
+                                        <label for="{{ 'nilai_' . $krt->id }}">{{ $krt->nama_kriteria }}</label>
+                                        @php
+                                            $ak = $alternatifKriteriaGrouped[$item->id][$krt->id] ?? null;
+                                            $previousValue = $ak ? $ak[0]->value : '';
+                                        @endphp
+                                        <input type="number" name="value[]" id="{{ 'nilai_' . $krt->id }}" class="form-control" placeholder="Masukkan nilai" value="{{ old('value.' . $loop->index, $previousValue) }}" required>
+                                        <input name="id_kriteria[]" type="hidden" value="{{ $krt->id }}">
                                     </div>
                                 @endforeach
                                 <div class="modal-footer">
@@ -133,17 +133,27 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+
+
     </section>
 
     <script>
         let alternatif;
+        let score;
 
-        function setAlternatif(newAlternatif) {
-            alternatif = newAlternatif;
-            console.log(alternatif);
+        function setAlternatif(newAlternatif, newScore) {
+           alternatif = newAlternatif;
+           score = newScore;
             document.getElementById('namaAlternatif').innerHTML = alternatif.nama_alternatif;
             document.getElementById('idAlternatif').value = alternatif.id;
+            for (const [key, element] of Object.entries(score)) {
+                document.getElementById('nilai_' + key).value = element[0].value;
+            }
         }
+
     </script>
 
     <style>

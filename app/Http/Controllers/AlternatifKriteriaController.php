@@ -9,30 +9,30 @@ class AlternatifKriteriaController extends Controller
 {
     public function store(Request $request)
     {
-        // dd($request->all());
         $id_alternatif = $request->id_alternatif;
-        foreach($request->id as $key => $value){
-            // check if data with 'id_alternatif' and 'id_kriteria' already exists on table 'alternatif_kriteria'
+
+        foreach ($request->id_kriteria as $key => $id_kriteria) {
+            // Cek apakah data dengan 'id_alternatif' dan 'id_kriteria' sudah ada di tabel 'alternatif_kriteria'
             $alternatif_kriteria = AlternatifKriteria::where('id_alternatif', $id_alternatif)
-                ->where('id_kriteria', $request->id[$key])
+                ->where('id_kriteria', $id_kriteria)
                 ->first();
 
-            // if data already exists, update the data
-            if($alternatif_kriteria){
+            // Jika data sudah ada, perbarui data
+            if ($alternatif_kriteria) {
                 $alternatif_kriteria->update([
                     'value' => $request->value[$key],
                 ]);
-                continue;
             } else {
-                // if data doesn't exist, create new data
+                // Jika data tidak ada, buat data baru
                 AlternatifKriteria::create([
                     'id_alternatif' => $id_alternatif,
-                    'id_kriteria' => $request->id[$key],
+                    'id_kriteria' => $id_kriteria,
                     'value' => $request->value[$key],
-                ]); 
+                ]);
             }
         }
+
         return redirect('alternatif')
-            ->with('success','Alternatif berhasil ditambahkan');
+            ->with('success', 'Alternatif berhasil ditambahkan');
     }
 }

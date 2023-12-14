@@ -38,14 +38,10 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/', [DashboardController::class, 'index']);
 Route::get('/dashboard', [DashboardController::class, 'index']);
-// Route::get('/sub_criteria', [DashboardController::class, 'show_sub_criteria']);
-// Route::get('/criteria', [DashboardController::class, 'show_criteria']);
-
 
 Route::resource('kriteria', KriteriaController::class);
-Route::resource('sub_kriteria', SubKriteriaController::class);
+// Route::resource('sub_kriteria', SubKriteriaController::class);
 Route::resource('alternatif', AlternatifController::class);
 Route::resource('alternatif_kriteria', AlternatifKriteriaController::class);
 Route::resource('perhitungan', PerhitunganController::class);

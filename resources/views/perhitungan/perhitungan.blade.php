@@ -47,7 +47,7 @@
             <div class="card-header">
                 <h3 class="card-title">Normalisasi Matriks</h3>
             </div>
-            <div class="card-body">
+            <div class="card-body table-responsive">
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -78,7 +78,7 @@
             <div class="card-header">
                 <h3 class="card-title">Normalisasi Matriks Terbobot</h3>
             </div>
-            <div class="card-body">
+            <div class="card-body table-responsive">
                 <table class="table table-bordered">
                     <thead>
                         <tr>
